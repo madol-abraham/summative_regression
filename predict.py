@@ -8,8 +8,8 @@ app = FastAPI()
 
 
 class InputData(BaseModel):
-    Area: str  
-    Item: str
+    Area: int  
+    Item: int
     Year: int
     average_rain_fall_mm_per_year: float # (gt=0, lt=2000)  # Rainfall in mm, realistic range
 
