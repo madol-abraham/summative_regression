@@ -2,9 +2,18 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
+## this allow the testing locally
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins during testing
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 class InputData(BaseModel):
